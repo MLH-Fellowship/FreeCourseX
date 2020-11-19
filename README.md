@@ -1,2 +1,3 @@
 # FreeCourseX
-Courses your way
+
+Courses Your Way
