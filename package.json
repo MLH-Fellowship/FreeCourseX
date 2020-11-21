@@ -3,17 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^0.2.0",
+    "@tailwindcss/ui": "^0.7.2",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.0",
     "@testing-library/user-event": "^12.2.2",
+    "postcss": "^8.1.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:css": "postcss src/assets/tailwind.css",
+    "watch:css": "postcss src/assets/tailwind.css",
+    "start": "npm run watch:css & react-scripts start",
+    "build": "npm run build:css & react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +40,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^9.8.6",
+    "babel-plugin-macros": "^2.8.0",
+    "postcss-cli": "^8.3.0",
+    "tailwindcss": "^2.0.1",
+    "twin.macro": "^1.12.1"
   }
 }
