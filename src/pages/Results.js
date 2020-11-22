@@ -1,6 +1,6 @@
-
 import React from 'react';
-
+import "tailwindcss/tailwind.css"
+import { Link } from 'react-router-dom';
 
 function Results() {
     return (
