@@ -14,11 +14,12 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "styled-components": "^5.2.1",
+    "tailwindcss": "^2.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "build:css": "postcss src/assets/tailwind.css",
-    "watch:css": "postcss src/assets/tailwind.css",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "start": "npm run watch:css & react-scripts start",
     "build": "npm run build:css & react-scripts build",
     "test": "react-scripts test",
@@ -47,7 +48,6 @@
     "autoprefixer": "^9.8.6",
     "babel-plugin-macros": "^2.8.0",
     "postcss-cli": "^8.3.0",
-    "tailwindcss": "^1.0.6",
     "twin.macro": "^1.12.1"
   }
 }

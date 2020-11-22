@@ -1,10 +1,9 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import "./styles/main.css"
 import LandingPage from "./pages/Landing.js"
 import Form from './pages/Form.js'
 import Results from './pages/Results.js'
