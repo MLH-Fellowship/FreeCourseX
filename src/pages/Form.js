@@ -15,8 +15,9 @@ function Form() {
         <div className="grid justify-items-center items-center bg-yellow-50 p-4 h-screen">
 
             <div className="flex flex-col justify-items-center bg-blue-400 round-lg h-4/5 w-4/5 p-7 rounded-3xl shadow-lg">
-                <h1 className="relative text-6xl text-center -top-16 font-black text-blue-900">Form Page</h1>
-
+                <div className="relative -top-16 pb-4 pt-2 bg-blue-200 w-2/5 items-center mx-auto rounded-3xl">
+                    <h1 className="text-6xl text-center font-black text-blue-900">Form</h1>
+                </div>
                 <form>
                     <div className="col-span-6 sm:col-span-3">
                         <label for="learning-style"
@@ -52,11 +53,12 @@ function Form() {
                             <option>&lt; 1 Hour</option>
                         </select>
                     </div>
-                    <div className="flex justify-content-end">
-                        <button type="button" className="h-10 px-4 py-2 m-6 border border-transparent rounded-lg shadow-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">submit</button>
-                    </div>
-                </form>
 
+                </form>
+                <div className="m-auto space-x-96">
+                    <a href="/" ><button type="button" className="h-10 px-4 py-2 m-6 border border-transparent rounded-3xl shadow-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">back</button></a>
+                    <button type="button" className="h-10 px-4 py-2 m-6 border border-transparent rounded-3xl shadow-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">submit</button>
+                </div>
             </div>
 
         </div>
