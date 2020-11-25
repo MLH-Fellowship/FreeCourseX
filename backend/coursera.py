@@ -4,48 +4,54 @@ import csv
 
 baseUrl = "https://www.coursera.org"
 
-# skillset = input().split(" ")
-
-# per20Skills = "%20".join(skillset)
-
-# courseraUrl = "https://www.coursera.org/search?query=" + per20Skills
-
 # *** Testing an actual URL for scrapers. Uncomment above once the front-end
 # has an option to enter user input ***
 
 # test Url
-courseraUrl = "https://www.coursera.org/search?query=scraping&"
+# courseraUrl = "https://www.coursera.org/search?query=scraping&"
 
 # requests the page
-page = requests.get(courseraUrl)
+# page = requests.get(courseraUrl)
 
 # gets the html of the page
-soup = BeautifulSoup(page.text, 'html.parser')
+# soup = BeautifulSoup(page.text, 'html.parser')
 
 
-def getCourseraCourses():
+def getCourseraCourses(topic):
+    skillset = topic.split(" ")
+
+    per20Skills = "%20".join(skillset)
+
+    courseraUrl = "https://www.coursera.org/search?query=" + per20Skills
+
+    # requests the page
+    page = requests.get(courseraUrl)
+
+    # gets the html of the page
+    soup = BeautifulSoup(page.text, 'html.parser')
+
     title_all = soup.find_all("h2", {'class': "color-primary-text"})
-    for title in title_all:
-        print(title.text)
+    # for title in title_all:
+    # print(title.text)
 
     link_all = soup.find_all(
         "a", {'class': "rc-DesktopSearchCard anchor-wrapper"})
     links = []
     for link in link_all:
         links.append("https://www.coursera.org/projects" + link.get('href'))
-    print(links)
+    # print(links)
 
     popularity_all = soup.find_all(
         "span", attrs={'class': "enrollment-number"})
-# for popularity in popularity_all:
-#     print(popularity.text)
+    # for popularity in popularity_all:
+    #     print(popularity.text)
 
     difficulty_all = soup.find_all("span", attrs={'class': "difficulty"})
-# for difficulty in difficulty_all:
-#     print(difficulty.text)
+    # for difficulty in difficulty_all:
+    #     print(difficulty.text)
 
     dict_course = dict()
-    with open('scraperData.csv', 'w+', newline='') as file:
+    with open('scraperData.csv', 'a', newline='') as file:
         fields = ['courseTitle', 'courseLink',
                   'coursePopularity', 'courseDifficulty']
         writer = csv.DictWriter(file, fieldnames=fields)
@@ -60,6 +66,3 @@ def getCourseraCourses():
                     'courseDifficulty': difficulty_all[i].text
                 }
             )
-
-
-getCourseraCourses()
