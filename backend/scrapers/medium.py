@@ -27,50 +27,56 @@ title = soup.find("h3", {'class': "graf-after--figure"}).text
 # print(title)
 
 # finds the text for all the titles on the page
-title_all = soup.find_all("h3", {'class': "graf-after--figure"})
-# for title in title_all:
-#     print(title.text)
 
-popularity = soup.find("span", attrs={'class': "u-relative"}).text
-# print(popularity)
 
-popularity_all = soup.find_all("span", attrs={'class': "u-relative"})
-# for popularity in popularity_all:
-#     print(popularity.text)
+def getMediumCourses():
+    title_all = soup.find_all("h3", {'class': "graf-after--figure"})
+    # for title in title_all:
+    #     print(title.text)
 
-# difficulty not found in search page
-# difficulty = soup.find("span", attrs={'class': "difficulty"}).text
-# print(difficulty)
+    popularity = soup.find("span", attrs={'class': "u-relative"}).text
+    # print(popularity)
 
-difficulty_all = soup.find_all("span", attrs={'class': "difficulty"})
-if difficulty_all is None:
-    difficulty = None
-else:
-    pass
-for difficulty in difficulty_all:
-    print(difficulty.text)
+    popularity_all = soup.find_all("span", attrs={'class': "u-relative"})
+    # for popularity in popularity_all:
+    #     print(popularity.text)
 
-duration = soup.find("span", attrs={'class': "readingTime"}).get('title')
-# print(duration)
+    # difficulty not found in search page
+    # difficulty = soup.find("span", attrs={'class': "difficulty"}).text
+    # print(difficulty)
 
-duration_all = soup.find_all("span", attrs={'class': "readingTime"})
-# for duration in duration_all:
-#     print(duration.get('title'))
+    difficulty_all = soup.find_all("span", attrs={'class': "difficulty"})
+    if difficulty_all is None:
+        difficulty = None
+    else:
+        pass
+    for difficulty in difficulty_all:
+        print(difficulty.text)
 
-dict_course = dict()
+    duration = soup.find("span", attrs={'class': "readingTime"}).get('title')
+    # print(duration)
 
-with open('scraperData.csv', 'w+', newline='') as file:
-    fields = ['courseTitle', 'coursePopularity',
-              'courseDifficulty', 'courseDuration']
-    writer = csv.DictWriter(file, fieldnames=fields)
-    writer.writeheader()
+    duration_all = soup.find_all("span", attrs={'class': "readingTime"})
+    # for duration in duration_all:
+    #     print(duration.get('title'))
 
-    for i in range(len(title_all)):
-        writer.writerow(
-            {
-                'courseTitle': title_all[i].text,
-                'coursePopularity': popularity_all[i].text,
-                # 'courseDifficulty': difficulty_all[i].text,
-                'courseDuration': duration_all[i].get('title')
-            }
-        )
+    dict_course = dict()
+
+    with open('scraperData.csv', 'w+', newline='') as file:
+        fields = ['courseTitle', 'coursePopularity',
+                  'courseDifficulty', 'courseDuration']
+        writer = csv.DictWriter(file, fieldnames=fields)
+        writer.writeheader()
+
+        for i in range(len(title_all)):
+            writer.writerow(
+                {
+                    'courseTitle': title_all[i].text,
+                    'coursePopularity': popularity_all[i].text,
+                    # 'courseDifficulty': difficulty_all[i].text,
+                    'courseDuration': duration_all[i].get('title')
+                }
+            )
+
+
+getMediumCourses()

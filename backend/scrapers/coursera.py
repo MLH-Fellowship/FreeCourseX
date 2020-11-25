@@ -28,7 +28,7 @@ soup = BeautifulSoup(page.text, 'html.parser')
 # finds the text for all the titles on the page
 
 
-def getCourses():
+def getCourseraCourses():
     title_all = soup.find_all("h2", {'class': "color-primary-text"})
     for title in title_all:
         print(title.text)
@@ -64,4 +64,4 @@ def getCourses():
             )
 
 
-getCourses()
+getCourseraCourses()
