@@ -2,10 +2,11 @@
 a developer tool that gathers all coding tutorials and courses into one website
 
 # Inspiration
-With all the coding resources at our disposal, it can get overwhelming to pick which websites to refer to. Our web app gathers courses from the most popular resources such as FreeCodeCamp, Coursera, and edX, and allows users to pick a course/tutorial based on their learning style, skill level, and the amount of time they want to spend learning. 
+With all the coding resources at our disposal, it can get overwhelming to pick which websites to refer to. Our web app gathers courses from the most popular resources such as Coursera, and Medium, and allows users to pick a course/tutorial based on their learning style, skill level, and the amount of time they want to spend learning. 
 
 # Technologies
 - React.js
+- React Router
 - TailwindCSS/TailwindUI
 - Python
 
