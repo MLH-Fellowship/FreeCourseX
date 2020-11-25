@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Results() {
     return (
-        <h1>Results Page</h1>
+        <div className="h-full bg-yellow-50">
+            <h1 className="font-black blue-500">Results Page</h1>
+        </div >
     );
 }
 
