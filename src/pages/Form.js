@@ -11,10 +11,11 @@ function Form() {
 
     const onSubmit = data => {
         alert(JSON.stringify(data));
+        console.log(data)
         fetch('http://127.0.0.1:5000/api/form', {
             method: 'POST',
-            body: data
-        }).then(function (response) {
+            body: JSON.stringify(data),
+        }).then(response => {
             console.log(response)
             return response.json();
         });
