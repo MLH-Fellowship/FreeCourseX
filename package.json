@@ -50,5 +50,6 @@
     "babel-plugin-macros": "^2.8.0",
     "postcss-cli": "^8.3.0",
     "twin.macro": "^1.12.1"
-  }
+  },
+  "proxy": "http://127.0.0.1:5000/"
 }

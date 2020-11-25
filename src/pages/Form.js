@@ -11,6 +11,13 @@ function Form() {
 
     const onSubmit = data => {
         alert(JSON.stringify(data));
+        fetch('http://127.0.0.1:5000', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then(function(response) {
+            console.log(response)
+            return response.json();
+        });
     };
 
     return (
@@ -22,7 +29,15 @@ function Form() {
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="col-span-6 sm:col-span-3">
-                        <label for="learning-style"
+                        <label htmlFor="topic"
+                            className="block text-lg font-medium text-white">Topic:</label>
+                        <input name="topic" ref={register}
+                            className="form-input my-3 block w-full py-2 px-3 border-0 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter what you want to learn!">
+                        </input>
+                    </div>
+
+                    <div className="col-span-6 sm:col-span-3">
+                        <label htmlFor="learning-style"
                             className="block text-lg font-medium text-white">Learning Style:</label>
                         <select name="learning-style" ref={register}
                             className="my-3 block w-full py-2 px-3 border-0 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -33,7 +48,7 @@ function Form() {
                     </div>
 
                     <div className="col-span-6 sm:col-span-3">
-                        <label for="difficulty"
+                        <label htmlFor="difficulty"
                             className="block text-lg font-medium text-white">Difficulty:</label>
                         <select name="difficulty" ref={register}
                             className="my-3 block w-full py-2 px-3 border-0 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -44,15 +59,15 @@ function Form() {
                     </div>
 
                     <div className="col-span-6 sm:col-span-3">
-                        <label for="duration"
+                        <label htmlFor="duration"
                             className="block text-lg font-medium text-white">Time Commitment:</label>
                         <select name="duration" ref={register}
                             className="my-3 block w-full py-2 px-3 border-0 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            <option value="5min">&gt; 5 Minutes</option>
+                            <option value="5min">&lt; 5 Minutes</option>
                             <option value="15min">15 Minutes</option>
                             <option value="30min">30 Minutes</option>
                             <option value="45min">45 Minutes</option>
-                            <option value="60min">&lt; 1 Hour</option>
+                            <option value="60min">&gt; 1 Hour</option>
                         </select>
                     </div>
 
