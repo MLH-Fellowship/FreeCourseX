@@ -14,7 +14,7 @@ function Form() {
     return (
         <div className="grid justify-items-center items-center bg-yellow-50 p-4 h-screen">
 
-            <div className="flex flex-col justify-items-center bg-blue-400 round-lg h-4/5 w-4/5 p-7 rounded-3xl shadow-lg">
+            <div className="flex flex-col justify-items-center bg-blue-400 round-lg h-4/5 w-3/5 p-7 rounded-3xl shadow-lg">
                 <div className="relative -top-16 pb-4 pt-2 bg-blue-200 w-2/5 items-center mx-auto rounded-3xl">
                     <h1 className="text-6xl text-center font-black text-blue-900">Form</h1>
                 </div>
@@ -55,7 +55,7 @@ function Form() {
                     </div>
 
                 </form>
-                <div className="m-auto space-x-96">
+                <div className="m-auto space-x-64">
                     <a href="/" ><button type="button" className="h-10 px-4 py-2 m-6 border border-transparent rounded-3xl shadow-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">back</button></a>
                     <button type="button" className="h-10 px-4 py-2 m-6 border border-transparent rounded-3xl shadow-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">submit</button>
                 </div>
