@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
-function Form() {
+function Form({onSubmit}) {
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
-        alert(JSON.stringify(data));
-        fetch('http://127.0.0.1:5000/api/form', {
-            method: 'POST',
-            body: data
-        }).then(function (response) {
-            console.log(response)
-            return response.json();
-        });
-    };
+    // const onSubmit = data => {
+    //     alert(JSON.stringify(data));
+    //     fetch('http://127.0.0.1:5000/api/form', {
+    //         method: 'POST',
+    //         body: data
+    //     }).then(function (response) {
+    //         console.log(response)
+    //         return response.json();
+    //     });
+    // };
 
     return (
         <div className="flex flex-col justify-items-center bg-blue-400 round-lg h-4/5 w-3/5 p-7 rounded-3xl shadow-lg" >
