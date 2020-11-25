@@ -47,8 +47,8 @@ if difficulty_all is None:
     difficulty = None
 else:
     pass
-# for difficulty in difficulty_all:
-#     print(difficulty.text)
+for difficulty in difficulty_all:
+    print(difficulty.text)
 
 duration = soup.find("span", attrs={'class': "readingTime"}).get('title')
 # print(duration)
