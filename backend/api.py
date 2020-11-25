@@ -23,6 +23,5 @@ def form():
     print(content)  # Do your processing
 
     return {
-        # 'hey yo': "OK"
-        print(content)
+        'hey yo': "OK"
     }
