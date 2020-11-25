@@ -29,9 +29,9 @@ def form():
     print(learning_style)
     print(difficulty)
     print(duration)
+    getCourseraCourses(topic)
 
-    # return "test"
-    return getCourseraCourses(topic)
+    return "test"
 
 # @app.route('/api/form', methods=['GET', 'POST'])
 # def form():

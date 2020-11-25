@@ -4,12 +4,6 @@ import csv
 
 baseUrl = "https://www.coursera.org"
 
-# skillset = input().split(" ")
-
-# per20Skills = "%20".join(skillset)
-
-# courseraUrl = "https://www.coursera.org/search?query=" + per20Skills
-
 # *** Testing an actual URL for scrapers. Uncomment above once the front-end
 # has an option to enter user input ***
 
@@ -37,8 +31,8 @@ def getCourseraCourses(topic):
     soup = BeautifulSoup(page.text, 'html.parser')
 
     title_all = soup.find_all("h2", {'class': "color-primary-text"})
-    for title in title_all:
-        print(title.text)
+    # for title in title_all:
+    # print(title.text)
 
     link_all = soup.find_all(
         "a", {'class': "rc-DesktopSearchCard anchor-wrapper"})
