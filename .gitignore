@@ -17,6 +17,10 @@
 .env.development.local
 .env.test.local
 .env.production.local
+lib
+env
+/backend/.env
+Pipfile
 
 npm-debug.log*
 yarn-debug.log*
