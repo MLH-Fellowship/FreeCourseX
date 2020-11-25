@@ -13,8 +13,8 @@ function Form() {
         alert(JSON.stringify(data));
         fetch('http://127.0.0.1:5000/api/form', {
             method: 'POST',
-            body: JSON.stringify(data)
-        }).then(function(response) {
+            body: data
+        }).then(function (response) {
             console.log(response)
             return response.json();
         });
