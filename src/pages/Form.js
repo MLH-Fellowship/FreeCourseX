@@ -11,7 +11,7 @@ function Form() {
 
     const onSubmit = data => {
         alert(JSON.stringify(data));
-        fetch('http://127.0.0.1:5000', {
+        fetch('http://127.0.0.1:5000/api/form', {
             method: 'POST',
             body: JSON.stringify(data)
         }).then(function(response) {
