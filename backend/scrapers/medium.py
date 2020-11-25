@@ -34,6 +34,12 @@ def getMediumCourses():
     # for title in title_all:
     #     print(title.text)
 
+    link_all = soup.find_all("a")
+    links = []
+    for link in link_all:
+        links.append(link.get('href'))
+    print(links)
+
     popularity = soup.find("span", attrs={'class': "u-relative"}).text
     # print(popularity)
 
@@ -62,21 +68,21 @@ def getMediumCourses():
 
     dict_course = dict()
 
-    with open('scraperData.csv', 'w+', newline='') as file:
-        fields = ['courseTitle', 'coursePopularity',
-                  'courseDifficulty', 'courseDuration']
-        writer = csv.DictWriter(file, fieldnames=fields)
-        writer.writeheader()
+    # with open('scraperData.csv', 'w+', newline='') as file:
+    #     fields = ['courseTitle', 'coursePopularity',
+    #               'courseDifficulty', 'courseDuration']
+    #     writer = csv.DictWriter(file, fieldnames=fields)
+    #     writer.writeheader()
 
-        for i in range(len(title_all)):
-            writer.writerow(
-                {
-                    'courseTitle': title_all[i].text,
-                    'coursePopularity': popularity_all[i].text,
-                    # 'courseDifficulty': difficulty_all[i].text,
-                    'courseDuration': duration_all[i].get('title')
-                }
-            )
+    #     for i in range(len(title_all)):
+    #         writer.writerow(
+    #             {
+    #                 'courseTitle': title_all[i].text,
+    #                 'coursePopularity': popularity_all[i].text,
+    #                 # 'courseDifficulty': difficulty_all[i].text,
+    #                 'courseDuration': duration_all[i].get('title')
+    #             }
+    #         )
 
 
 getMediumCourses()
